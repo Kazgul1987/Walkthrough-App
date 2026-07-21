@@ -1,0 +1,2 @@
+import type { GuideSection } from '../types/guide'; import { ProgressBar } from './ProgressBar';
+export function SectionCard({ section, done, onOpen }: { section: GuideSection; done: number; onOpen: () => void }) { return <button className="section-card" onClick={onOpen}><div><span className="pill">{section.type}</span>{section.missable && <span className="warning">Missable</span>}</div><h3>{section.title}</h3><p>{section.area} · Level {section.recommendedLevel}</p><ProgressBar completed={done} total={section.steps.length} /></button>; }

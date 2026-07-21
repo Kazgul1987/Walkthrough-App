@@ -1,0 +1,1 @@
+export function SearchBar({ value, onChange }: { value: string; onChange: (value: string) => void }) { return <label className="search">Search guides<input value={value} onChange={(event) => onChange(event.target.value)} placeholder="Title, area, boss, or loot" /></label>; }
