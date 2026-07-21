@@ -1,0 +1,1 @@
+import type { Game } from '../types/guide'; export function GameCard({ game, onSelect }: { game: Game; onSelect: () => void }) { return <button className="game-card" onClick={onSelect}><span className="eyebrow">GAME FILE</span><h2>{game.title}</h2><p>{game.description}</p><span>{game.sections.length} guide sections →</span></button>; }

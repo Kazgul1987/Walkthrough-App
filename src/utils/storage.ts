@@ -1,0 +1,10 @@
+import type { Progress, SpoilerLevel } from '../types/guide';
+const keys = { progress: 'walkthrough-companion:progress', spoiler: 'walkthrough-companion:spoiler-mode', notes: 'walkthrough-companion:notes' };
+const read = <T,>(key: string, fallback: T): T => { try { const item = localStorage.getItem(key); return item ? JSON.parse(item) as T : fallback; } catch { return fallback; } };
+const write = (key: string, value: unknown) => { try { localStorage.setItem(key, JSON.stringify(value)); } catch { /* Private browsing or quota errors should not interrupt reading. */ } };
+export const loadProgress = () => read<Progress>(keys.progress, { steps: {}, sections: {}, loot: {} });
+export const saveProgress = (value: Progress) => write(keys.progress, value);
+export const loadNotes = () => read<Record<string, string>>(keys.notes, {});
+export const saveNotes = (value: Record<string, string>) => write(keys.notes, value);
+export const loadSpoiler = () => read<SpoilerLevel>(keys.spoiler, 'low');
+export const saveSpoiler = (value: SpoilerLevel) => write(keys.spoiler, value);

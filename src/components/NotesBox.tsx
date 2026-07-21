@@ -1,0 +1,1 @@
+export function NotesBox({ value, onChange }: { value: string; onChange: (value: string) => void }) { return <label className="notes">Personal notes<textarea value={value} onChange={(event) => onChange(event.target.value)} placeholder="Add reminders, builds, or things to revisit…" /></label>; }

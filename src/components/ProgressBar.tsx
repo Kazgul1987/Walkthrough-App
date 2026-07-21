@@ -1,0 +1,1 @@
+export function ProgressBar({ completed, total }: { completed: number; total: number }) { const value = total ? Math.round(completed / total * 100) : 0; return <div className="progress" aria-label={`${value}% complete`}><span style={{ width: `${value}%` }} /> <b>{value}%</b></div>; }
