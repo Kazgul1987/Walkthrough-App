@@ -1,0 +1,33 @@
+{
+  "sections": [
+    {
+      "recommendedLevel": "Any",
+      "spoilerLevel": "low",
+      "missable": false,
+      "preparation": "Structural example only: replace this note with original research and player-authored guidance.",
+      "steps": [
+        {
+          "id": "fighters-guild-example-review",
+          "text": "Review this structural example before adding original walkthrough steps.",
+          "optional": false,
+          "spoilerLevel": "low"
+        }
+      ],
+      "loot": [],
+      "secrets": [],
+      "missableContent": [],
+      "commonMistakes": [
+        "This is placeholder content, not a complete guide."
+      ],
+      "id": "fighters-guild-example",
+      "title": "Fighters Guild Structure Example",
+      "type": "Faction",
+      "order": 20,
+      "area": "Example guild hall",
+      "city": "Anvil",
+      "faction": "Fighters Guild",
+      "dlc": "Base Game",
+      "objective": "Placeholder for an original faction questline section."
+    }
+  ]
+}

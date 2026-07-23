@@ -1,0 +1,31 @@
+{
+  "sections": [
+    {
+      "recommendedLevel": "Any",
+      "spoilerLevel": "low",
+      "missable": false,
+      "preparation": "Structural example only: replace this note with original research and player-authored guidance.",
+      "steps": [
+        {
+          "id": "knights-example-review",
+          "text": "Review this structural example before adding original walkthrough steps.",
+          "optional": false,
+          "spoilerLevel": "low"
+        }
+      ],
+      "loot": [],
+      "secrets": [],
+      "missableContent": [],
+      "commonMistakes": [
+        "This is placeholder content, not a complete guide."
+      ],
+      "id": "knights-example",
+      "title": "Knights of the Nine Structure Example",
+      "type": "DLC",
+      "order": 40,
+      "area": "Example chapel",
+      "dlc": "Knights of the Nine",
+      "objective": "Placeholder for original Knights of the Nine planning."
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+import type { GuideSection } from '../types/guide';
+export function GuideMeta({ section }: { section: GuideSection }) { return <><span className="pill">{section.type}</span>{section.missable && <span className="warning">Missable content</span>}<h1>{section.title}</h1><p className="sub">{[section.area, section.region, section.city, section.faction, section.dlc, `Recommended level ${section.recommendedLevel}`].filter(Boolean).join(' · ')}</p><p>{section.objective}</p><section className="callout"><strong>Prepare:</strong> {section.preparation}</section></>; }
