@@ -1,0 +1,32 @@
+{
+  "sections": [
+    {
+      "recommendedLevel": "Any",
+      "spoilerLevel": "low",
+      "missable": false,
+      "preparation": "Structural example only: replace this note with original research and player-authored guidance.",
+      "steps": [
+        {
+          "id": "daedric-example-review",
+          "text": "Review this structural example before adding original walkthrough steps.",
+          "optional": false,
+          "spoilerLevel": "low"
+        }
+      ],
+      "loot": [],
+      "secrets": [],
+      "missableContent": [],
+      "commonMistakes": [
+        "This is placeholder content, not a complete guide."
+      ],
+      "id": "daedric-example",
+      "title": "Daedric Quest Category Example",
+      "type": "Side Quest",
+      "order": 30,
+      "area": "Example shrine",
+      "region": "Cyrodiil",
+      "dlc": "Base Game",
+      "objective": "Placeholder for an original Daedric quest category."
+    }
+  ]
+}

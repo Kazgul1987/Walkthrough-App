@@ -1,0 +1,33 @@
+{
+  "sections": [
+    {
+      "recommendedLevel": "Any",
+      "spoilerLevel": "low",
+      "missable": false,
+      "preparation": "Structural example only: replace this note with original research and player-authored guidance.",
+      "steps": [
+        {
+          "id": "cleanup-example-review",
+          "text": "Review this structural example before adding original walkthrough steps.",
+          "optional": false,
+          "spoilerLevel": "low"
+        }
+      ],
+      "loot": [],
+      "secrets": [],
+      "missableContent": [],
+      "commonMistakes": [
+        "This is placeholder content, not a complete guide."
+      ],
+      "id": "cleanup-example",
+      "title": "Completion Cleanup Example",
+      "type": "Cleanup",
+      "order": 60,
+      "area": "Multiple areas",
+      "dlc": "Base Game",
+      "objective": "Placeholder for a collectibles and endgame cleanup checklist.",
+      "achievementRelevant": true,
+      "uniqueItemRelevant": true
+    }
+  ]
+}
