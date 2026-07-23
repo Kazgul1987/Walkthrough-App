@@ -66,7 +66,7 @@ Use the extended metadata in `src/types/guide.ts` for region, city, faction, DLC
 
 ## Stable IDs, progress, and spoilers
 
-Keep section, step, and loot IDs stable after publishing a guide. Progress is saved in browser `localStorage`, and the app namespaces all tracking keys as `${gameId}:${id}` so different games cannot collide. Personal notes use the same namespaced section key.
+Keep section, step, and loot IDs stable after publishing a guide. Progress is saved in browser `localStorage` using hierarchical keys: sections use `${gameId}:section:${sectionId}`, steps append `:step:${stepId}`, and loot append `:loot:${lootId}`. This keeps generic IDs from colliding across either games or sections. Personal notes use the namespaced section key. Older raw progress keys are safely ignored rather than migrated.
 
 Spoiler levels are `low`, `normal`, and `full`. Individual steps and spoiler blocks stay hidden until the selected mode permits them, or the player explicitly reveals them.
 
