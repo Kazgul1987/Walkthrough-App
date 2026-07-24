@@ -41,7 +41,7 @@ Each guide directory needs a `manifest.json` whose `id` matches its directory na
 
 ### Section-file format
 
-Each non-manifest JSON file contains a `sections` array. Files can group a related questline or contain just one section. Every section needs a unique `id` within its game and an `order`; the loader merges all files and sorts by `order`. Development builds warn in the console about missing or duplicate section, step, and loot IDs.
+Each non-manifest JSON file contains a `sections` array. Files can group a related questline or contain just one section. Every section needs a unique `id` within its game and an `order`; the loader merges all files and sorts by `order`. Development builds warn in the console about missing or duplicate section, step, loot, and walkthrough-block IDs, as well as invalid walkthrough checklist references.
 
 ```json
 {
@@ -63,6 +63,29 @@ Each non-manifest JSON file contains a `sections` array. Files can group a relat
 ```
 
 Use the extended metadata in `src/types/guide.ts` for region, city, faction, DLC, prerequisites, achievement relevance, and unique-item relevance. The directory generates its type, DLC, faction, and region/city filters from these values.
+
+
+### Detailed walkthrough prose
+
+Sections can optionally add `walkthroughBlocks` for route-level instructions that complement, rather than replace, checkable steps. Each block has a stable `id`, required `spoilerLevel` and `text`, and may add a title, warning, optional marker, related NPCs, locations, quest IDs, and `checklistRefs`.
+
+```json
+"walkthroughBlocks": [{
+  "id": "town-route",
+  "title": "Finish related errands in one stop",
+  "spoilerLevel": "low",
+  "text": "Turn in the item, accept the follow-up, restock, then visit the nearby guild before leaving town.",
+  "relatedNpc": ["Quest giver"],
+  "relatedLocations": ["Town hall", "Guild hall"],
+  "checklistRefs": ["turn-in-item", "restock"],
+  "warning": "Make a manual save before a risky decision.",
+  "optional": true
+}]
+```
+
+Use prose blocks to explain the route, sequencing, and context that a checkbox cannot convey. Use checklist steps to confirm discrete completed actions. Prose blocks follow the same `low`, `normal`, and `full` spoiler behavior as steps: blocks above the current mode remain behind the existing reveal control. `checklistRefs` connect a prose block to step IDs in the same section; development validation warns when a reference does not exist.
+
+For large guides, write direct, concise, player-authored paragraphs: prose explains the route, the checklist confirms completion, warning fields flag missables or risky decisions, and metadata connects NPCs, locations, and related quests. All walkthrough text must be original or properly licensed.
 
 ## Stable IDs, progress, and spoilers
 

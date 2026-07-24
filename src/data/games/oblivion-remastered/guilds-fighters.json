@@ -1,33 +1,8 @@
 {
-  "sections": [
-    {
-      "recommendedLevel": "Any",
-      "spoilerLevel": "low",
-      "missable": false,
-      "preparation": "Structural example only: replace this note with original research and player-authored guidance.",
-      "steps": [
-        {
-          "id": "fighters-guild-example-review",
-          "text": "Review this structural example before adding original walkthrough steps.",
-          "optional": false,
-          "spoilerLevel": "low"
-        }
-      ],
-      "loot": [],
-      "secrets": [],
-      "missableContent": [],
-      "commonMistakes": [
-        "This is placeholder content, not a complete guide."
-      ],
-      "id": "fighters-guild-example",
-      "title": "Fighters Guild Structure Example",
-      "type": "Faction",
-      "order": 20,
-      "area": "Example guild hall",
-      "city": "Anvil",
-      "faction": "Fighters Guild",
-      "dlc": "Base Game",
-      "objective": "Placeholder for an original faction questline section."
-    }
-  ]
+  "sections": [{
+    "id":"fighters-guild-example", "title":"First Fighters Guild Visit", "type":"Faction", "order":20, "area":"Fighters Guild Hall", "city":"Anvil", "faction":"Fighters Guild", "dlc":"Base Game", "recommendedLevel":"1–5", "spoilerLevel":"low", "missable":false,
+    "objective":"Open Fighters Guild access and decide whether to take its first work.", "preparation":"Arrive with repaired equipment and room for practical supplies.",
+    "walkthroughBlocks":[{"id":"fighters-guild-open-door","title":"Open the guild while you are already in town","spoilerLevel":"low","text":"When your route brings you to a Fighters Guild hall, introduce yourself and ask about joining before accepting every available job. Membership gives a combat-focused character a useful home base; once you have access, review the first assignment, buy or store supplies if needed, and add it to the route only when it matches your current travel plans.","relatedNpc":["Fighters Guild recruiter"],"relatedLocations":["Fighters Guild Hall","Anvil"],"checklistRefs":["fighters-guild-join","fighters-guild-first-job"],"optional":true}],
+    "steps":[{"id":"fighters-guild-join","text":"Ask about joining the Fighters Guild.","optional":true,"spoilerLevel":"low"},{"id":"fighters-guild-first-job","text":"Review the first available Fighters Guild job before accepting it.","optional":true,"spoilerLevel":"low"}],"loot":[],"secrets":[],"missableContent":[],"commonMistakes":[]
+  }]
 }

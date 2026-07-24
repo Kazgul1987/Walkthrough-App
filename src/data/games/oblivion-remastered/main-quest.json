@@ -1,32 +1,35 @@
 {
   "sections": [
     {
-      "recommendedLevel": "Any",
-      "spoilerLevel": "low",
-      "missable": false,
-      "preparation": "Structural example only: replace this note with original research and player-authored guidance.",
-      "steps": [
-        {
-          "id": "main-quest-example-review",
-          "text": "Review this structural example before adding original walkthrough steps.",
-          "optional": false,
-          "spoilerLevel": "low"
-        }
-      ],
-      "loot": [],
-      "secrets": [],
-      "missableContent": [],
-      "commonMistakes": [
-        "This is placeholder content, not a complete guide."
-      ],
-      "id": "main-quest-example",
-      "title": "Main Quest Structure Example",
-      "type": "Main Story",
-      "order": 10,
-      "area": "Example starting area",
-      "region": "Cyrodiil",
-      "dlc": "Base Game",
-      "objective": "Placeholder for an original base-game main quest section."
+      "id": "main-quest-example", "title": "Imperial Prison Escape", "type": "Main Story", "order": 10,
+      "area": "Imperial Prison", "region": "Cyrodiil", "dlc": "Base Game", "recommendedLevel": "Any", "spoilerLevel": "low", "missable": false,
+      "objective": "Finish the opening escape while learning the essentials.", "preparation": "Use the opening to test your controls and keep only equipment you expect to use.",
+      "walkthroughBlocks": [{"id":"prison-escape-basics","title":"Follow the escape route without overthinking the build","spoilerLevel":"low","text":"Stay with the guards when the route is clear, but pause at containers long enough to learn the inventory flow. Equip a weapon and basic protection that suit your character, then keep moving; the opening is a safe place to practice blocking, sneaking, or spellcasting before the world opens up.","relatedLocations":["Imperial Prison"],"checklistRefs":["main-quest-example-review"]}],
+      "steps": [{"id":"main-quest-example-review","text":"Leave the prison with a basic weapon, protection, and a clear idea of the controls.","optional":false,"spoilerLevel":"low"}], "loot":[], "secrets":[], "missableContent":[], "commonMistakes":[]
+    },
+    {
+      "id":"post-sewers-setup", "title":"Post-Sewers Setup", "type":"Main Story", "order":11, "area":"Sewer Exit", "region":"Cyrodiil", "dlc":"Base Game", "recommendedLevel":"1–3", "spoilerLevel":"low", "missable":false,
+      "objective":"Establish a low-risk routine before committing to a route.", "preparation":"Bring a few healing options and leave room for supplies.",
+      "walkthroughBlocks":[{"id":"sewers-save-and-sort","title":"Make a reset point, then travel with a purpose","spoilerLevel":"low","text":"Once outside, make a manual save and sort your inventory before setting a distant destination. Sell only gear you are certain you will not use, keep a modest reserve of healing, and choose one nearby town as your first service stop. This turns the first trip into a chance to repair, restock, and learn where merchants are instead of a long series of disconnected errands.","relatedLocations":["Sewer Exit","Imperial City"],"checklistRefs":["post-sewers-manual-save","post-sewers-supplies"]}],
+      "steps":[{"id":"post-sewers-manual-save","text":"Make a manual save after leaving the sewers.","optional":false,"spoilerLevel":"low"},{"id":"post-sewers-supplies","text":"Carry a small supply of healing and leave inventory space for new finds.","optional":false,"spoilerLevel":"low"}],"loot":[],"secrets":[],"missableContent":[],"commonMistakes":[],"nextSectionId":"deliver-amulet-weynon"
+    },
+    {
+      "id":"deliver-amulet-weynon", "title":"Deliver the Amulet at Weynon Priory", "type":"Main Story", "order":12, "area":"Weynon Priory", "region":"Chorrol", "dlc":"Base Game", "recommendedLevel":"1–4", "spoilerLevel":"low", "missable":false,
+      "objective":"Deliver the Amulet of Kings and set up the next leg of the route.", "preparation":"Repair your main weapon and bring healing before leaving town services behind.",
+      "walkthroughBlocks":[{"id":"arrive-weynon-turn-in","title":"Turn in the Amulet and pause before rushing onward","spoilerLevel":"low","text":"Travel to Weynon Priory near Chorrol and speak with Jauffre inside the priory house. Hand over the Amulet of Kings, accept the next objective, then stop before immediately fast-traveling away. Make a manual save, review your gear, and use Chorrol as an early hub for selling loot, repairing equipment, and opening nearby questlines.","relatedNpc":["Jauffre"],"relatedLocations":["Weynon Priory","Chorrol"],"relatedQuestIds":["deliver-amulet"],"checklistRefs":["deliver-amulet","manual-save"]}],
+      "steps":[{"id":"deliver-amulet","text":"Give the Amulet of Kings to Jauffre and accept the follow-up objective.","optional":false,"spoilerLevel":"low"},{"id":"manual-save","text":"Make a manual save before leaving Weynon Priory.","optional":false,"spoilerLevel":"low"}],"loot":[],"secrets":[],"missableContent":[],"commonMistakes":[],"nextSectionId":"chorrol-weynon-hub"
+    },
+    {
+      "id":"chorrol-weynon-hub", "title":"Chorrol and Weynon Hub Setup", "type":"Area", "order":13, "area":"Chorrol", "city":"Chorrol", "region":"Cyrodiil", "dlc":"Base Game", "recommendedLevel":"1–5", "spoilerLevel":"low", "missable":false,
+      "objective":"Chain early services and quest access into one town visit.", "preparation":"Bring saleable loot and enough coin for basic repairs or supplies.",
+      "walkthroughBlocks":[{"id":"chorrol-services-and-quests","title":"Bundle services before the next main-story trip","spoilerLevel":"low","text":"Walk through Chorrol after visiting Weynon Priory rather than treating it as a separate excursion. Sell heavy loot, repair your favored gear, and speak to guild representatives if you want their early access. Pick up only the local leads you intend to pursue soon, then restock before continuing; this keeps your journal useful and prevents a later return trip just for routine errands.","relatedLocations":["Chorrol","Weynon Priory"],"checklistRefs":["chorrol-repair","chorrol-guild-inquiry"],"optional":true}],
+      "steps":[{"id":"chorrol-repair","text":"Repair and restock at Chorrol before your next long trip.","optional":false,"spoilerLevel":"low"},{"id":"chorrol-guild-inquiry","text":"Ask a guild representative about joining if it fits your character.","optional":true,"spoilerLevel":"low"}],"loot":[],"secrets":[],"missableContent":[],"commonMistakes":[],"nextSectionId":"prepare-kvatch"
+    },
+    {
+      "id":"prepare-kvatch", "title":"Prepare for Kvatch", "type":"Main Story", "order":14, "area":"Road to Kvatch", "region":"Cyrodiil", "dlc":"Base Game", "recommendedLevel":"3–6", "spoilerLevel":"low", "missable":false,
+      "objective":"Travel prepared without revealing the challenges ahead.", "preparation":"Repair gear, carry healing, and make a manual save before setting out.",
+      "walkthroughBlocks":[{"id":"kvatch-supply-check","title":"Pack before the road gets demanding","spoilerLevel":"low","text":"Before traveling toward Kvatch, repair your primary weapon and armor, carry healing that you can use quickly, and avoid filling every inventory slot with vendor goods. Use the Chorrol stop to finish these chores, then make a new save at the edge of town. The route is smoother when you arrive ready to respond instead of needing to retreat for basic supplies.","relatedLocations":["Chorrol","Kvatch"],"checklistRefs":["kvatch-repair","kvatch-healing","kvatch-save"],"warning":"Do not rely on a single autosave before a difficult new area."}],
+      "steps":[{"id":"kvatch-repair","text":"Repair your preferred equipment.","optional":false,"spoilerLevel":"low"},{"id":"kvatch-healing","text":"Pack healing supplies you can use in combat.","optional":false,"spoilerLevel":"low"},{"id":"kvatch-save","text":"Make a manual save before traveling to Kvatch.","optional":false,"spoilerLevel":"low"}],"loot":[],"secrets":[],"missableContent":[],"commonMistakes":[]
     }
   ]
 }

@@ -33,6 +33,16 @@ export const loadGames = (): Game[] => {
     const itemIds = new Set<string>();
     for (const step of section.steps) { if (!step.id || itemIds.has(`step:${step.id}`)) warn(`Section "${section.id}" has a missing or duplicate step id.`); itemIds.add(`step:${step.id}`); }
     for (const loot of section.loot) { if (!loot.id || itemIds.has(`loot:${loot.id}`)) warn(`Section "${section.id}" has a missing or duplicate loot id.`); itemIds.add(`loot:${loot.id}`); }
+    const walkthroughIds = new Set<string>();
+    const stepIds = new Set(section.steps.map((step) => step.id));
+    for (const block of section.walkthroughBlocks ?? []) {
+      if (!block.id) warn(`Section "${section.id}" has a walkthrough block without an id.`);
+      if (block.id && walkthroughIds.has(block.id)) warn(`Section "${section.id}" has duplicate walkthrough block id "${block.id}".`);
+      walkthroughIds.add(block.id);
+      if (!block.text) warn(`Walkthrough block "${block.id || '(missing id)'}" in section "${section.id}" is missing text.`);
+      if (!block.spoilerLevel) warn(`Walkthrough block "${block.id || '(missing id)'}" in section "${section.id}" is missing a spoiler level.`);
+      for (const ref of block.checklistRefs ?? []) if (!stepIds.has(ref)) warn(`Walkthrough block "${block.id || '(missing id)'}" in section "${section.id}" references missing step "${ref}".`);
+    }
   }
   return { ...manifest, id: gameId, sections: sections.sort((a, b) => sectionOrder(a) - sectionOrder(b)) };
  });

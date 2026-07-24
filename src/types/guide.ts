@@ -11,6 +11,11 @@ export type DlcName =
   | 'Deluxe Content' | 'Unknown';
 
 export interface Step { id: string; text: string; optional: boolean; spoilerLevel: SpoilerLevel; reward?: string }
+export interface WalkthroughBlock {
+  id: string; title?: string; spoilerLevel: SpoilerLevel; text: string;
+  relatedQuestIds?: string[]; relatedNpc?: string[]; relatedLocations?: string[];
+  checklistRefs?: string[]; warning?: string; optional?: boolean;
+}
 export interface Loot { id: string; name: string; location: string; missable: boolean; notes?: string }
 export interface BossGuide { name: string; weaknesses: string[]; resistances: string[]; phases: string[]; recommendedStrategy: string }
 export interface GuideSection {
@@ -20,6 +25,7 @@ export interface GuideSection {
   achievementRelevant?: boolean; uniqueItemRelevant?: boolean;
   objective: string; preparation: string; prerequisites?: string[]; recommendedBefore?: string[];
   locksAfter?: string[]; startLocation?: string; questGiver?: string;
+  walkthroughBlocks?: WalkthroughBlock[];
   steps: Step[]; boss?: BossGuide; loot: Loot[]; secrets: string[];
   missableContent: string[]; commonMistakes: string[]; completionCriteria?: string[];
   nextSectionId?: string;
