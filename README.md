@@ -71,19 +71,19 @@ Sections can optionally add `walkthroughBlocks` for route-level instructions tha
 
 ```json
 "walkthroughBlocks": [{
-  "id": "town-route",
-  "title": "Finish related errands in one stop",
+  "id": "weynon-next-actions",
+  "title": "Turn in the Amulet and prepare the next route",
   "spoilerLevel": "low",
-  "text": "Turn in the item, accept the follow-up, restock, then visit the nearby guild before leaving town.",
-  "relatedNpc": ["Quest giver"],
-  "relatedLocations": ["Town hall", "Guild hall"],
-  "checklistRefs": ["turn-in-item", "restock"],
-  "warning": "Make a manual save before a risky decision.",
-  "optional": true
+  "text": "Speak with Jauffre and hand over the Amulet of Kings.\n\nAccept the next objective, create a manual save, and visit Chorrol before continuing toward Kvatch.",
+  "relatedNpc": ["Jauffre"],
+  "relatedLocations": ["Weynon Priory", "Chorrol"],
+  "checklistRefs": ["deliver-amulet", "create-manual-save"]
 }]
 ```
 
-Use prose blocks to explain the route, sequencing, and context that a checkbox cannot convey. Use checklist steps to confirm discrete completed actions. Prose blocks follow the same `low`, `normal`, and `full` spoiler behavior as steps: blocks above the current mode remain behind the existing reveal control. `checklistRefs` connect a prose block to step IDs in the same section; development validation warns when a reference does not exist.
+Use prose blocks to explain the route, sequencing, and context that a checkbox cannot convey. Use checklist steps to confirm discrete completed actions. Insert paragraph breaks in `WalkthroughBlock.text` with `\n\n`; the UI preserves those line breaks while rendering the plain text. Prose blocks follow the same `low`, `normal`, and `full` spoiler behavior as steps: blocks above the current mode remain behind the existing reveal control.
+
+`checklistRefs` connect a prose block to step IDs in the same section, and every referenced ID must exist in that section. The UI displays the matching checklist step text rather than the raw ID, omits invalid or duplicate references, and lets players click a related step to smoothly scroll to and focus its checklist row. Development validation warns when a reference does not exist.
 
 For large guides, write direct, concise, player-authored paragraphs: prose explains the route, the checklist confirms completion, warning fields flag missables or risky decisions, and metadata connects NPCs, locations, and related quests. All walkthrough text must be original or properly licensed.
 
