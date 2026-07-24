@@ -1,0 +1,8 @@
+{
+  "sections": [{
+    "id":"mages-guild-opening", "title":"First Mages Guild Visit", "type":"Faction", "order":21, "area":"Mages Guild Hall", "city":"Chorrol", "faction":"Mages Guild", "dlc":"Base Game", "recommendedLevel":"1–5", "spoilerLevel":"low", "missable":false,
+    "objective":"Open Mages Guild access as part of a useful Chorrol stop.", "preparation":"Bring a little gold and leave space for alchemy or spellcasting supplies.",
+    "walkthroughBlocks":[{"id":"mages-guild-open-door","title":"Pair guild access with your Chorrol errands","spoilerLevel":"low","text":"After selling and repairing in Chorrol, visit the Mages Guild before leaving town. Speak with a guild representative about joining, look over the services available to a new member, and take note of any local task without feeling obliged to finish it immediately. This makes the same hub visit cover shopping, travel planning, and magical support.","relatedNpc":["Mages Guild representative"],"relatedLocations":["Chorrol","Mages Guild Hall"],"checklistRefs":["mages-guild-join","mages-guild-services"],"optional":true}],
+    "steps":[{"id":"mages-guild-join","text":"Ask a Mages Guild representative about joining.","optional":true,"spoilerLevel":"low"},{"id":"mages-guild-services","text":"Review the guild services that support your current build.","optional":true,"spoilerLevel":"low"}],"loot":[],"secrets":[],"missableContent":[],"commonMistakes":[]
+  }]
+}
