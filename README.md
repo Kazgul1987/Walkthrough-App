@@ -93,6 +93,10 @@ Keep section, step, and loot IDs stable after publishing a guide. Progress is sa
 
 Spoiler levels are `low`, `normal`, and `full`. Individual steps and spoiler blocks stay hidden until the selected mode permits them, or the player explicitly reveals them.
 
+## Complete-guide PDF export
+
+Open a game and choose **Export complete guide (PDF)** above the section directory. The app creates a print-optimized document containing every section, every spoiler level, current checklist marks, and personal notes. In the browser print dialog, select **Save as PDF** (wording varies by browser). The export stays local and does not send guide or progress data to a service. If the print view does not open, allow pop-ups for the app and try again.
+
 ## Adding a large guide
 
 1. Create a lowercase, hyphenated directory under `src/data/games/`.
