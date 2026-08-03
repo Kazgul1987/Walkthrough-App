@@ -7,6 +7,11 @@ type SectionFile = { sections: GuideSection[] } | GuideSection[];
 // available without adding loading states to the local-first UI.
 const manifests = import.meta.glob('./games/*/manifest.json', { eager: true, import: 'default' }) as Record<string, GameManifest>;
 const sectionFiles = import.meta.glob('./games/*/*.json', { eager: true, import: 'default' }) as Record<string, SectionFile>;
+const coverImages = import.meta.glob('./games/*/*.{avif,jpg,jpeg,png,svg,webp}', {
+  eager: true,
+  import: 'default',
+  query: '?url',
+}) as Record<string, string>;
 
 const warn = (message: string) => { if (import.meta.env.DEV) console.warn(`[guide loader] ${message}`); };
 const gameIdFromPath = (path: string) => path.split('/')[2];
@@ -21,6 +26,9 @@ export const loadGames = (): Game[] => {
   if (manifest.id && manifest.id !== folderId) warn(`Manifest id "${manifest.id}" does not match folder "${folderId}".`);
   if (gameIds.has(gameId)) warn(`Duplicate game id "${gameId}".`);
   gameIds.add(gameId);
+  const coverImagePath = manifest.coverImage ? `./games/${folderId}/${manifest.coverImage}` : undefined;
+  const coverImage = coverImagePath ? coverImages[coverImagePath] : undefined;
+  if (coverImagePath && !coverImage) warn(`Cover image "${manifest.coverImage}" for game "${gameId}" was not found.`);
   const sections = Object.entries(sectionFiles)
     .filter(([file]) => gameIdFromPath(file) === folderId && !file.endsWith('/manifest.json'))
     .flatMap(([, file]) => Array.isArray(file) ? file : file.sections ?? []);
@@ -44,7 +52,7 @@ export const loadGames = (): Game[] => {
       for (const ref of block.checklistRefs ?? []) if (!stepIds.has(ref)) warn(`Game "${gameId}", section "${section.id}", walkthrough block "${block.id || '(missing id)'}" references missing step "${ref}".`);
     }
   }
-  return { ...manifest, id: gameId, sections: sections.sort((a, b) => sectionOrder(a) - sectionOrder(b)) };
+  return { ...manifest, id: gameId, coverImage, sections: sections.sort((a, b) => sectionOrder(a) - sectionOrder(b)) };
  });
  return games.sort((a, b) => a.title.localeCompare(b.title));
 };

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title description">
+  <title id="title">Ashen Gates</title>
+  <desc id="description">A glowing gate stands between dark mountain peaks beneath an ember-colored sky.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#17172b"/>
+      <stop offset="1" stop-color="#8d4434"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#f8bb68" stop-opacity=".15"/>
+      <stop offset=".5" stop-color="#ffe2a1"/>
+      <stop offset="1" stop-color="#f8bb68" stop-opacity=".15"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" fill="url(#sky)"/>
+  <circle cx="480" cy="220" r="150" fill="#e87543" opacity=".18"/>
+  <path d="M0 385 170 205l105 130 110-175 95 130 90-165 155 210 100-120 135 170v155H0Z" fill="#111523"/>
+  <path d="M365 540V260c0-78 48-132 115-132s115 54 115 132v280h-54V263c0-46-24-78-61-78s-61 32-61 78v277Z" fill="#25283a"/>
+  <path d="M430 540V270c0-38 20-64 50-64s50 26 50 64v270Z" fill="url(#glow)"/>
+  <path d="M0 455c170-36 307-17 480 26 172-45 320-62 480-21v80H0Z" fill="#0b0e18"/>
+  <g fill="#f8bb68" opacity=".75">
+    <circle cx="210" cy="175" r="3"/><circle cx="290" cy="245" r="2"/><circle cx="665" cy="190" r="3"/><circle cx="735" cy="270" r="2"/><circle cx="590" cy="95" r="2"/>
+  </g>
+</svg>

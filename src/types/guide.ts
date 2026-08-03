@@ -30,6 +30,14 @@ export interface GuideSection {
   missableContent: string[]; commonMistakes: string[]; completionCriteria?: string[];
   nextSectionId?: string;
 }
-export interface GameManifest { id: string; title: string; platformNotes: string; versionNotes: string; description: string }
+export interface GameManifest {
+  id: string;
+  title: string;
+  platformNotes: string;
+  versionNotes: string;
+  description: string;
+  coverImage?: string;
+  coverImageAlt?: string;
+}
 export interface Game extends GameManifest { sections: GuideSection[] }
 export interface Progress { steps: Record<string, boolean>; sections: Record<string, boolean>; loot: Record<string, boolean> }

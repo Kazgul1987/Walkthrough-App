@@ -33,11 +33,15 @@ Each guide directory needs a `manifest.json` whose `id` matches its directory na
 {
   "id": "my-large-guide",
   "title": "My Original Guide",
+  "coverImage": "cover.webp",
+  "coverImageAlt": "Short description of the cover image",
   "platformNotes": "Local guide notes",
   "versionNotes": "Version 1.0",
   "description": "A short directory description."
 }
 ```
+
+`coverImage` and `coverImageAlt` are optional. To show a cover above the game title in the overview, place an appropriately licensed `avif`, `jpg`, `jpeg`, `png`, `svg`, or `webp` file next to the manifest and reference its filename. If no image is configured (or the file cannot be found), the card keeps its text-only layout. Use an empty `coverImageAlt` for purely decorative artwork; otherwise describe the image concisely.
 
 ### Section-file format
 
