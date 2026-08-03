@@ -43,6 +43,10 @@ Each guide directory needs a `manifest.json` whose `id` matches its directory na
 
 `coverImage` and `coverImageAlt` are optional. To show a cover above the game title in the overview, place an appropriately licensed `avif`, `jpg`, `jpeg`, `png`, `svg`, or `webp` file next to the manifest and reference its filename. If no image is configured (or the file cannot be found), the card keeps its text-only layout. Use an empty `coverImageAlt` for purely decorative artwork; otherwise describe the image concisely.
 
+### Personal cover images
+
+Each game card also has a **Choose image** button. It opens the browser's local file picker (Windows Explorer on Windows) and assigns the selected image only in that browser. The app scales the image down, stores it in `localStorage`, and never uploads it to a server. **Change image** replaces a personal cover; **Remove** restores the cover from the manifest, or the empty placeholder when no bundled cover exists. Browser storage is limited, so a very large image can still fail to save even after scaling.
+
 ### Section-file format
 
 Each non-manifest JSON file contains a `sections` array. Files can group a related questline or contain just one section. Every section needs a unique `id` within its game and an `order`; the loader merges all files and sorts by `order`. Development builds warn in the console about missing or duplicate section, step, loot, and walkthrough-block IDs, as well as invalid walkthrough checklist references.
