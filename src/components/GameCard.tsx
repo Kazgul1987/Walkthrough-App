@@ -1,12 +1,19 @@
 import { useRef, useState, type ChangeEvent } from 'react';
-import type { Game } from '../types/guide';
+import type { Game, Progress } from '../types/guide';
 import { loadGameCover, prepareGameCover, removeGameCover, saveGameCover } from '../utils/gameCoverStorage';
+import { stepKey } from '../utils/progressKeys';
+import { ProgressBar } from './ProgressBar';
 
-export function GameCard({ game, onSelect }: { game: Game; onSelect: () => void }) {
+export function GameCard({ game, progress, onSelect }: { game: Game; progress: Progress; onSelect: () => void }) {
   const [customCover, setCustomCover] = useState(() => loadGameCover(game.id));
   const [error, setError] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
   const cover = customCover ?? game.coverImage;
+  const totalSteps = game.sections.reduce((total, section) => total + section.steps.length, 0);
+  const completedSteps = game.sections.reduce(
+    (total, section) => total + section.steps.filter((step) => progress.steps[stepKey(game.id, section.id, step.id)]).length,
+    0,
+  );
 
   const chooseCover = async (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -48,6 +55,8 @@ export function GameCard({ game, onSelect }: { game: Game; onSelect: () => void 
         <span className="game-card__title">{game.title}</span>
         <span className="game-card__description">{game.description}</span>
         <span>{game.sections.length} guide sections →</span>
+        <span className="game-card__progress-label">Overall progress</span>
+        <ProgressBar completed={completedSteps} total={totalSteps} label={`${game.title} overall progress`} />
       </button>
       <div className="game-card__image-actions">
         <input ref={inputRef} className="visually-hidden" type="file" accept="image/*" onChange={chooseCover} />
